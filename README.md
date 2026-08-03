@@ -3,14 +3,14 @@ XonFrame is an open-source smart glasses powered using ESP32-S3 and phone app ru
 
 My goal is to build smart glasses that are affordable, repairable, and completely open source.
 
-## What can it do?
+## Features
 
--Real time Navigation
--Live Camera feed
--Object detection
--Phone notifications
--Reminders
--And we can talk to ELIX
+Real time Navigation
+Live Camera feed
+Object detection
+Phone notifications
+Reminders
+And we can talk to ELIX
 
 The glasses mainly collect information and display results.
 
@@ -18,13 +18,13 @@ The phone handles speech recognition, computer vision, reasoning, navigation, an
 
 ## Hardware
 
--ESP32-S3FN8
--OV5640 Camera module
--0.49in SSD1306 OLED display
--INMP441 12s Microphone
--Exciter 8Ω 1W Bone conduction speaker
--BM1270 6 Axis IMU
--2x 350 mAh 3.7v (501035) LiPo Rechargeable battery
+ESP32-S3FN8
+OV5640 Camera module
+0.49in SSD1306 OLED display
+INMP441 12s Microphone
+Exciter 8Ω 1W Bone conduction speaker
+BM1270 6 Axis IMU
+2x 350 mAh 3.7v (501035) LiPo Rechargeable battery
 
 ## Software
 

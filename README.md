@@ -5,12 +5,12 @@ My goal is to build smart glasses that are affordable, repairable, and completel
 
 ## What can it do?
 
-Real time Navigation
-Live Camera feed
-Object detection
-Phone notifications
-Reminders
-And we can talk to ELIX
+-Real time Navigation
+-Live Camera feed
+-Object detection
+-Phone notifications
+-Reminders
+-And we can talk to ELIX
 
 The glasses mainly collect information and display results.
 
@@ -18,13 +18,13 @@ The phone handles speech recognition, computer vision, reasoning, navigation, an
 
 ## Hardware
 
-ESP32-S3FH4R2
-OV5640 Camera module
-0.49in SSD1306 OLED display
-INMP441 12s Microphone
-Exciter 8Ω 1W Bone conduction speaker
-BM1270 6 Axis IMU
-2x 350 mAh 3.7v (501035) LiPo Rechargeable battery
+-ESP32-S3FN8
+-OV5640 Camera module
+-0.49in SSD1306 OLED display
+-INMP441 12s Microphone
+-Exciter 8Ω 1W Bone conduction speaker
+-BM1270 6 Axis IMU
+-2x 350 mAh 3.7v (501035) LiPo Rechargeable battery
 
 ## Software
 

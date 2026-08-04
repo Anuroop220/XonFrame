@@ -23,7 +23,7 @@ The phone handles speech recognition, computer vision, reasoning, navigation, an
 
 ## Hardware
 
-ESP32-S3FN8
+ESP32-S3R8
 
 OV5640 Camera module
 

@@ -1,15 +1,20 @@
 # XonFrame
 XonFrame is an open-source smart glasses powered using ESP32-S3 and phone app running E.L.I.X (The AI assistant for XonFrame)
 
-My goal is to build smart glasses that are affordable, repairable, and completely open source.
+My goal is to build smart glasses that are affordable repairable and completely open source.
 
 ## Features
 
 Real time Navigation
+
 Live Camera feed
+
 Object detection
+
 Phone notifications
+
 Reminders
+
 And we can talk to ELIX
 
 The glasses mainly collect information and display results.
@@ -19,12 +24,20 @@ The phone handles speech recognition, computer vision, reasoning, navigation, an
 ## Hardware
 
 ESP32-S3FN8
+
 OV5640 Camera module
+
 0.49in SSD1306 OLED display
+
 INMP441 12s Microphone
+
 Exciter 8Ω 1W Bone conduction speaker
+
 BM1270 6 Axis IMU
-2x 350 mAh 3.7v (501035) LiPo Rechargeable battery
+
+2x 350 mAh 3.7v (501035) LiPo Rechargeable battery 
+
+Safety Important - Both 3.7v batteries must be at the exact same voltage (both fully charged to 4.2v) during the very first time when soldering them together in parallel or high currents will flow between them
 
 ## Software
 
@@ -35,11 +48,11 @@ ESP-IDF / Arduino
 
 ## Why I'm building this
 
-Most smart glasses are expensive, closed source, or difficult to modify.
+I am building this because most smart glasses are expensive, closed source and difficult to modify.
 
 I wanted to build something that anyone could build, improve, or even build themselves.
 
-XonFrame is my attempt to make AI smart glasses more open and accessible
+XonFrame is my idea to make smart glasses more open and accessible
 
 
 ## Contributing
@@ -56,4 +69,4 @@ Hardware designs are licensed under CERN-OHL-W-2.0.
 
 ---
 
-Made by Anuroop.
+by Anuroop

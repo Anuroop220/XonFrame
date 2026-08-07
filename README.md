@@ -21,7 +21,7 @@ The glasses mainly collect information and display results.
 
 The phone handles speech recognition, computer vision, reasoning, navigation, and other AI features.
 
-## Hardware
+## Components Needed
 
 ESP32-S3FH4R2
 

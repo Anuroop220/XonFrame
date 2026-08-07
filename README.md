@@ -67,6 +67,5 @@ Software is licensed under Apache 2.0.
 
 Hardware designs are licensed under CERN-OHL-W-2.0.
 
----
 
 by Anuroop

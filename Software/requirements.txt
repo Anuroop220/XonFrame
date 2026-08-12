@@ -1,0 +1,15 @@
+flask
+flask-cors
+python-dotenv
+google-generativeai
+ultralytics
+opencv-python
+pygame
+SpeechRecognition
+pyttsx3
+pyaudio
+requests
+geocoder
+pushbullet.py
+websocket-client
+numpy

@@ -1,22 +1,22 @@
-import cv2
+"""
+hud.py — the Siri-style liquid-glass waveform HUD.
+
+Drawing functions are factored out so main.py can `from hud import draw_hud,
+init_hud` instead of duplicating this ~150 lines of pygame code (your
+original main.py had a full copy-paste of this file inline — now there's
+one copy).
+
+Run this file directly to test the HUD on its own with keyboard shortcuts:
+  1 = toggle ELIX | 2 = fake detections | 3 = fake notification | Q = quit
+"""
+
 import pygame
 import math
 import time
 import random
-import threading
 from datetime import datetime
-from motion import detect_motion
-from vision import detect_objects
-from voice import listen, speak
-from elix import ask_elix
-from wakeword import start_wake_word
-from notifications import start_notifications
 
-# ---------------- PYGAME SETUP ----------------
-pygame.init()
 WIDTH, HEIGHT = 480, 320
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("XonFrame - E.L.I.X")
 
 DARK = (8, 8, 12)
 CYAN = (0, 255, 255)
@@ -25,11 +25,6 @@ GREEN = (0, 255, 100)
 RED = (255, 60, 60)
 GRAY = (40, 40, 40)
 
-font_large = pygame.font.SysFont("consolas", 28, bold=True)
-font_medium = pygame.font.SysFont("consolas", 16, bold=True)
-font_small = pygame.font.SysFont("consolas", 12)
-font_tiny = pygame.font.SysFont("consolas", 10)
-
 WAVE_COLORS = [
     (120, 60, 255),
     (0, 120, 255),
@@ -37,25 +32,24 @@ WAVE_COLORS = [
     (255, 80, 120),
     (255, 140, 60),
 ]
-wave_offsets = [random.uniform(0, math.pi * 2) for _ in WAVE_COLORS]
-wave_speeds = [0.8, 1.1, 0.6, 1.3, 0.9]
-wave_amps = [18, 22, 15, 20, 16]
+_wave_offsets = [random.uniform(0, math.pi * 2) for _ in WAVE_COLORS]
+_wave_speeds = [0.8, 1.1, 0.6, 1.3, 0.9]
+_wave_amps = [18, 22, 15, 20, 16]
 
-# ---------------- SHARED STATE ----------------
-state = {
-    "battery_percent": 82,
-    "connected": True,
-    "detections": [],
-    "elix_active": False,
-    "notification": "",
-    "nav_active": False,
-    "nav_steps": [],
-    "nav_current": 0
-}
-clock = pygame.time.Clock()
-start_time = time.time()
+_fonts = {}
 
-# ---------------- HUD DRAWING ----------------
+
+def init_hud():
+    """Call once after pygame.init(). Returns (screen, clock)."""
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("XonFrame - E.L.I.X")
+    _fonts["large"] = pygame.font.SysFont("consolas", 28, bold=True)
+    _fonts["medium"] = pygame.font.SysFont("consolas", 16, bold=True)
+    _fonts["small"] = pygame.font.SysFont("consolas", 12)
+    _fonts["tiny"] = pygame.font.SysFont("consolas", 10)
+    return screen, pygame.time.Clock()
+
+
 def draw_corner_brackets(surface, x, y, w, h, color, size=14):
     pygame.draw.line(surface, color, (x, y), (x + size, y), 1)
     pygame.draw.line(surface, color, (x, y), (x, y + size), 1)
@@ -65,6 +59,7 @@ def draw_corner_brackets(surface, x, y, w, h, color, size=14):
     pygame.draw.line(surface, color, (x, y + h), (x, y + h - size), 1)
     pygame.draw.line(surface, color, (x + w, y + h), (x + w - size, y + h), 1)
     pygame.draw.line(surface, color, (x + w, y + h), (x + w, y + h - size), 1)
+
 
 def draw_glass_orb(surface, cx, cy, radius, t, active):
     glow_surf = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
@@ -80,11 +75,10 @@ def draw_glass_orb(surface, cx, cy, radius, t, active):
         wave_surf = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
         num_points = 120
         for wave_idx, color in enumerate(WAVE_COLORS):
-            points_top = []
-            points_bottom = []
-            speed = wave_speeds[wave_idx]
-            amp = wave_amps[wave_idx]
-            offset = wave_offsets[wave_idx]
+            points_top, points_bottom = [], []
+            speed = _wave_speeds[wave_idx]
+            amp = _wave_amps[wave_idx]
+            offset = _wave_offsets[wave_idx]
             for i in range(num_points + 1):
                 angle = (i / num_points) * math.pi * 2
                 x = cx + radius * math.cos(angle)
@@ -105,9 +99,8 @@ def draw_glass_orb(surface, cx, cy, radius, t, active):
 
     orb_surf = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
     pygame.draw.circle(orb_surf, (200, 200, 255, 50), (cx, cy), radius, 2)
-    highlight_x = cx - int(radius * 0.3)
-    highlight_y = cy - int(radius * 0.3)
-    pygame.draw.circle(orb_surf, (255, 255, 255, 15), (highlight_x, highlight_y), int(radius * 0.15), 0)
+    hx, hy = cx - int(radius * 0.3), cy - int(radius * 0.3)
+    pygame.draw.circle(orb_surf, (255, 255, 255, 15), (hx, hy), int(radius * 0.15), 0)
     surface.blit(orb_surf, (0, 0))
 
     if not active:
@@ -116,7 +109,11 @@ def draw_glass_orb(surface, cx, cy, radius, t, active):
         pygame.draw.circle(idle_surf, (0, 180, 220, int(60 * pulse)), (cx, cy), int(radius * 0.5), 2)
         surface.blit(idle_surf, (0, 0))
 
-def draw_hud(t):
+
+def draw_hud(screen, clock, t, state):
+    font_large, font_medium = _fonts["large"], _fonts["medium"]
+    font_small, font_tiny = _fonts["small"], _fonts["tiny"]
+
     screen.fill(DARK)
     for x in range(0, WIDTH, 40):
         pygame.draw.line(screen, (15, 15, 20), (x, 0), (x, HEIGHT))
@@ -142,11 +139,9 @@ def draw_hud(t):
 
     if state["elix_active"]:
         blink = int(t * 2) % 2 == 0
-        label = "LISTENING" if blink else "E.L.I.X"
-        color = CYAN
+        label, color = ("LISTENING" if blink else "E.L.I.X"), CYAN
     else:
-        label = "E.L.I.X  READY"
-        color = CYAN_DIM
+        label, color = "E.L.I.X  READY", CYAN_DIM
     label_surf = font_small.render(label, True, color)
     screen.blit(label_surf, (orb_cx - label_surf.get_width() // 2, 270))
 
@@ -167,7 +162,6 @@ def draw_hud(t):
 
     pygame.draw.line(screen, CYAN_DIM, (0, HEIGHT - 38), (WIDTH, HEIGHT - 38), 1)
     if state["notification"]:
-        # Blinking notification
         blink = int(time.time() * 2) % 2 == 0
         notif_color = CYAN if blink else CYAN_DIM
         pygame.draw.rect(screen, (0, 20, 30), (0, HEIGHT - 38, WIDTH, 38))
@@ -179,91 +173,31 @@ def draw_hud(t):
     screen.blit(font_tiny.render(f"{int(clock.get_fps())}fps", True, GRAY), (WIDTH - 40, HEIGHT - 25))
     pygame.display.flip()
 
-# ---------------- WAKE WORD CALLBACK ----------------
-def on_wake_word():
-    state["elix_active"] = True
-    state["notification"] = "E.L.I.X listening..."
-    speak("Yes?")
-    user_input = listen()
-    
-    if user_input:
-        from navigation import parse_nav_command, get_directions
-        
-        # Check if it's a navigation command
-        destination = parse_nav_command(user_input)
-        
-        if destination:
-            speak(f"Getting directions to {destination}")
-            state["notification"] = f"Navigating to {destination}..."
-            directions, summary = get_directions(destination)
-            
-            if directions:
-                speak(summary)
-                state["notification"] = summary
-                state["nav_active"] = True
-                state["nav_steps"] = directions
-                state["nav_current"] = 0
-                # Speak first instruction
-                first = directions[0]
-                speak(f"First, {first['instruction']} in {first['distance']} meters")
-            else:
-                speak(summary)
-                state["notification"] = summary
-        else:
-            # Normal E.L.I.X response
-            state["notification"] = f"You: {user_input[:40]}"
-            response = ask_elix(user_input, state["detections"])
-            speak(response)
-            state["notification"] = f"ELIX: {response[:40]}"
-    
-    state["elix_active"] = False
 
-# ---------------- AI PIPELINE THREAD ----------------
-def ai_pipeline():
-    cap = cv2.VideoCapture(0)
-    ret, prev_frame = cap.read()
-    last_yolo_time = 0
-    YOLO_COOLDOWN = 3
-
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        if detect_motion(prev_frame, frame):
-            now = time.time()
-            if now - last_yolo_time > YOLO_COOLDOWN:
-                detections = detect_objects(frame)
-                state["detections"] = detections
-                state["connected"] = True
-                last_yolo_time = now
-
-        prev_frame = frame.copy()
-        cv2.imshow("XonFrame Camera", frame)
-
-        key = cv2.waitKey(1) & 0xFF
-        if key == ord('q'):
-            break
-
-    cap.release()
-    cv2.destroyAllWindows()
-
-# ---------------- RUN ----------------
-start_wake_word(on_wake_word)
-start_notifications(state)
-pipeline_thread = threading.Thread(target=ai_pipeline, daemon=True)
-pipeline_thread.start()
-
-running = True
-print("XonFrame LIVE system running")
-print("Say 'Hey E.L.I.X' to activate | Q (camera window) = quit")
-
-while running:
-    t = time.time() - start_time
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-    draw_hud(t)
-    clock.tick(30)
-
-pygame.quit()
+if __name__ == "__main__":
+    pygame.init()
+    screen, clock = init_hud()
+    state = {
+        "battery_percent": 82, "connected": True, "detections": [],
+        "elix_active": False, "notification": "",
+    }
+    start_time = time.time()
+    running = True
+    print("E.L.I.X HUD test mode — 1=toggle elix 2=fake detections 3=fake notif Q=quit")
+    while running:
+        t = time.time() - start_time
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_1:
+                    state["elix_active"] = not state["elix_active"]
+                if event.key == pygame.K_2:
+                    state["detections"] = ["person", "laptop", "bottle", "phone"]
+                if event.key == pygame.K_3:
+                    state["notification"] = "ALERT: Motion detected in frame"
+                if event.key == pygame.K_q:
+                    running = False
+        draw_hud(screen, clock, t, state)
+        clock.tick(30)
+    pygame.quit()

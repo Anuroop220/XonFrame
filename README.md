@@ -62,6 +62,9 @@ No.	Quantity	Comment	Designator	Footprint	Value	Manufacturer Part	Manufacturer	S
 19	1	2.4GHz	U7	QFN-56_L7.0-W7.0-P0.40-BL-EP5.7	2.4GHz	ESP32-S3FH4R2	ESPRESSIF(乐鑫)	C3013940	LCSC
 20	1	TYPE-C-31-M-12	USBC1	USB-C_SMD-TYPE-C-31-M-12_1		TYPE-C-31-M-12	韩国韩荣	C165948	LCSC
 
+[Mouser](https://www.mouser.in/en/ProductDetail/Espressif-Systems/ESP32-S3FH4R2?qs=tlsG%2FOw5FFjPrwkmZSBQNA%3D%3D&srsltid=AfmBOoqKYVMap9jSj9ATa5MjMtgFBaLuwApidHaJJ7h-9lh4Gxkn0UCc)
+
+
 ## Software
 
 Python

@@ -1,1 +1,0 @@
-# yolo11n.pt goes here — copy your existing weights file into software/

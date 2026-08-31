@@ -1,30 +1,41 @@
 """
-config.py — shared settings for the XonFrame laptop-side pipeline.
-Edit these to match your setup, then every other file reads from here.
+configuration settings\
+API keys will be taken from .env file
+Do not put real API keys in this file bcs it should be put in the .env file
 """
 
-# ── Glasses connection ──
-GLASSES_IP = "192.168.1.42"          # ESP32-S3FH4R2 IP on your WiFi
-GLASSES_WS_PORT = 81                  # matches console's ws://<ip>:81/ws
-GLASSES_WS_URL = f"ws://{GLASSES_IP}:{GLASSES_WS_PORT}/ws"
+import os
+from pathlib import Path
+from dotenv import load_dotenv
 
-# ── Vision ──
-YOLO_MODEL_PATH = "yolo11n.pt"
-YOLO_CONFIDENCE = 0.45
+# this is for Loading .env file from the software folder
+env_file = Path(__file__).resolve().parent / ".env"
+load_dotenv(env_file)
 
-# ── Voice ──
-TTS_VOICE_RATE = 175                  # words per minute, for pyttsx3
 
-# ── Wake word ──
-WAKE_WORD = "elix"
+# Paste the esp32 ip address down here
+esp32_ip = os.getenv("esp32_ip", "put esp32 ip address printed in terminal/sl monitor here")
+esp32_ws_port = int(os.getenv("esp32_ws_port", "81"))
+# don't put the ip address down it will automatically take the ip address from above code 
+esp_ws_url = f"ws://{esp32_ip}:{esp32_ws_port}/ws"
 
-# ── Navigation ──
-ORS_API_KEY = ""                      # OpenRouteService key — set in .env instead, see navigation.py
 
-# ── Notifications ──
-PUSHBULLET_API_KEY = ""               # set in .env instead, see notifications.py
+path_of_yolo_model = os.getenv("path_of_yolo_model", "yolo11n.pt")
+yolo_confidence = float(os.getenv("yolo_confidence", "0.45"))
 
-# ── E.L.I.X bridge (Gemini) ──
-BRIDGE_HOST = "0.0.0.0"
-BRIDGE_PORT = 5001
-GEMINI_MODEL = "gemini-2.0-flash"
+
+tts_voice_rate = int(os.getenv("tts_voice_rate", "175"))
+
+
+elix_wakeword = ["elix", "alex", "helix", "felix", "lix"]
+
+
+# API will be automatically taken from the env file with the down code
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+ORS_API_KEY = os.getenv("ORS_API_KEY", "")
+PUSHBULLET_API_KEY = os.getenv("PUSHBULLET_API_KEY", "")
+
+
+bridge_host = os.getenv("bridge_host", "0.0.0.0")
+bridge_port = int(os.getenv("bridge_port", "5001"))
+gemini_model = os.getenv("gemini_model", "gemini-3.6-flash")

@@ -1,13 +1,15 @@
 """
-elix_bridge.py — runs on your LAPTOP as a separate process from main.py.
+This file starts like a separate server for the xosoftware to talk with elix
+keep this program running while using the xosoftware
 
-This is what the XonFrame Console's Settings -> Connection -> "Phone E.L.I.X
-Bridge URL" field points at. It exposes /chat over HTTP so the browser-based
-console can talk to E.L.I.X, using the same ask_elix() brain as main.py.
+start it in another terminal by typing - python elix_bridge.py
 
-Run alongside main.py:
-    python elix_bridge.py
-Then set the console's bridge URL to http://<this-laptop-ip>:5001
+use this bridge URL in the xosoftware settings tab
+    http://<paste_laptop_ip_here>:5001 (like this http://111.111.1.11:5001) 
+
+    if it is running in the same computer where the xosofware is running 
+    use this ip  http://localhost:5001
+     it will be already there so no need to change
 """
 
 from flask import Flask, request, jsonify
@@ -23,7 +25,7 @@ def chat():
     data = request.get_json(silent=True) or {}
     message = (data.get("message") or "").strip()
     if not message:
-        return jsonify({"error": "no 'message' field in request"}), 400
+        return jsonify({"error": "no 'message' field in this request"}), 400
     reply = ask_elix(message)
     return jsonify({"reply": reply})
 

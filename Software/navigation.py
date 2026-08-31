@@ -1,68 +1,144 @@
 import os
-import requests
+from pathlib import Path
+
 import geocoder
+import requests
 from dotenv import load_dotenv
 
-load_dotenv()
-ORS_API_KEY = os.environ.get("ORS_API_KEY")
+load_dotenv(Path(__file__).resolve().parent / ".env")
 
+ors_api = os.getenv("ORS_API_KEY")
+REQUEST_TIMEOUT = 10
 
 def get_current_location():
-    g = geocoder.ip('me')
-    if g.ok:
-        return g.latlng
+    """it will get an approximate location from the internet connection"""
+    try:
+        location = geocoder.ip("me")
+
+        if location.ok and location.latlng:
+            return location.latlng
+
+        print("Could not find an approximate location")
+
+    except Exception as error:
+        print(f"Location error: {error}")
+
     return None
 
-
 def get_directions(destination):
-    if not ORS_API_KEY:
-        return None, "ORS_API_KEY not set — add it to your .env file"
+    """it finds the directions to the destination."""
+    if not ors_api:
+        return None, "ORS_API_KEY is missing from the .env file"
+
+    if not isinstance(destination, str) or not destination.strip():
+        return None, "No destination was provided"
+
+    destination = destination.strip()
+    origin = get_current_location()
+
+    if not origin:
+        return None, "Could not get your approximate location"
+
     try:
-        origin = get_current_location()
-        if not origin:
-            return None, "Could not get your location"
+        geocode_response = requests.get(
+            "https://api.openrouteservice.org/geocode/search",
+            params={
+                "api_key": ors_api,
+                "text": destination,
+                "size": 1,
+            },
+            timeout=REQUEST_TIMEOUT,
+        )
+        geocode_response.raise_for_status()
 
-        geo_url = "https://api.openrouteservice.org/geocode/search"
-        geo_params = {"api_key": ORS_API_KEY, "text": destination, "size": 1}
-        geo_response = requests.get(geo_url, params=geo_params).json()
+        places = geocode_response.json().get("features", [])
 
-        if not geo_response["features"]:
+        if not places:
             return None, f"Could not find {destination}"
 
-        dest_coords = geo_response["features"][0]["geometry"]["coordinates"]
-        dest_name = geo_response["features"][0]["properties"]["label"]
+        place = places[0]
+        dest_coords = place["geometry"]["coordinates"]
+        dest_name = place["properties"].get("label", destination)
 
-        route_url = "https://api.openrouteservice.org/v2/directions/driving-car"
-        headers = {"Authorization": ORS_API_KEY}
-        body = {"coordinates": [[origin[1], origin[0]], [dest_coords[0], dest_coords[1]]]}
+        route_response = requests.post(
+            "https://api.openrouteservice.org/v2/directions/driving-car",
+            headers={"Authorization": ors_api},
+            json={
+                "coordinates": [
+                    [origin[1], origin[0]],
+                    [dest_coords[0], dest_coords[1]],
+                ]
+            },
+            timeout=REQUEST_TIMEOUT,
+        )
+        route_response.raise_for_status()
 
-        route_response = requests.post(route_url, json=body, headers=headers).json()
+        routes = route_response.json().get("routes", [])
 
-        if "routes" not in route_response:
+        if not routes:
             return None, "Could not get directions"
 
-        route = route_response["routes"][0]
-        steps = route["segments"][0]["steps"]
+        route = routes[0]
+        segments = route.get("segments", [])
 
-        directions = []
-        for step in steps[:5]:
-            directions.append({
-                "instruction": step["instruction"],
-                "distance": round(step["distance"]),
-            })
+        if not segments:
+            return None, "The route has no directions"
 
-        total_distance = round(route["summary"]["distance"] / 1000, 1)
-        total_time = round(route["summary"]["duration"] / 60)
+        steps = segments[0].get("steps", [])
 
-        return directions, f"Route to {dest_name} — {total_distance}km, {total_time} mins"
+        directions = [
+            {
+                "instruction": step.get("instruction", ""),
+                "distance": round(step.get("distance", 0)),
+            }
+            for step in steps[:5]
+        ]
 
-    except Exception as e:
-        return None, f"Navigation error: {str(e)}"
+        summary = route.get("summary", {})
+        distance_km = round(summary.get("distance", 0) / 1000, 1)
+        time_minutes = round(summary.get("duration", 0) / 60)
 
+        return (
+            directions,
+            f"Route to {dest_name} — "
+            f"{distance_km} km, {time_minutes} mins",
+        )
+
+    except requests.RequestException:
+        return None, "The navigation service could not be reached"
+
+    except (KeyError, TypeError, ValueError):
+        return None, "The navigation service returned invalid data"
 
 def parse_nav_command(text):
-    keywords = ["navigate to", "go to", "take me to", "directions to", "how do i get to", "put a map to"]
-    for keyword in keywords:
-        if keyword in text.lower():
-            return text.lower().split(keyword)[-1].strip()
+    """
+    it gets the destination from a spoken navigation command 
+    like navigate to the nearest petrol pump
+    """
+    if not isinstance(text, str):
+        return None
+
+    original_text = text.strip()
+    lower_text = original_text.lower()
+
+    commands = (
+        "navigate to",
+        "go to",
+        "take me to",
+        "directions to",
+        "how do i get to",
+        "put a map to",
+        "show me the way to",
+        "route to",
+        "get me to",
+        "find a route to",
+    )
+
+    for command in commands:
+        position = lower_text.find(command)
+
+        if position != -1:
+            destination = original_text[position + len(command):].strip()
+            return destination or None
+
     return None

@@ -1,14 +1,12 @@
 """
-hud.py — the Siri-style liquid-glass waveform HUD.
-
-Drawing functions are factored out so main.py can `from hud import draw_hud,
-init_hud` instead of duplicating this ~150 lines of pygame code (your
-original main.py had a full copy-paste of this file inline — now there's
-one copy).
-
-Run this file directly to test the HUD on its own with keyboard shortcuts:
-  1 = toggle ELIX | 2 = fake detections | 3 = fake notification | Q = quit
-"""
+This code draw the hud for xonframe glasses
+Run this file  if you need to test the display look 
+for that these are the keyboard controls
+    1-To turn ELIX on or off
+    2-To show sample detections
+    3-To show a sample notification
+    Q-To quit it
+ """
 
 import pygame
 import math
@@ -129,13 +127,32 @@ def draw_hud(screen, clock, t, state):
     screen.blit(font_large.render(now.strftime("%H:%M"), True, CYAN), (20, 15))
     screen.blit(font_tiny.render(now.strftime("%A  %B %d"), True, (80, 80, 100)), (22, 50))
 
-    batt = state["battery_percent"]
-    bc = GREEN if batt > 30 else RED
-    screen.blit(font_tiny.render(f"PWR  {batt}%", True, bc), (WIDTH - 95, 18))
-    pygame.draw.rect(screen, bc, (WIDTH - 95, 33, 36, 7), 1)
-    pygame.draw.rect(screen, bc, (WIDTH - 94, 34, int(34 * batt / 100), 5))
-    conn = "● LINKED" if state["connected"] else "● OFFLINE"
-    screen.blit(font_tiny.render(conn, True, GREEN if state["connected"] else RED), (WIDTH - 95, 48))
+    try:
+        batt = int(state.get("battery_percent", 0))
+    except (TypeError, ValueError):
+        batt = 0
+
+    batt = max(0, min(100, batt))
+    battery_color = GREEN if batt > 30 else RED
+
+    screen.blit(
+        font_tiny.render(f"PWR  {batt}%", True, battery_color),
+        (WIDTH - 95, 18),)
+
+    pygame.draw.rect(
+        screen, battery_color, (WIDTH - 95, 33, 36, 7), 1)
+    pygame.draw.rect(
+        screen,
+        battery_color,
+        (WIDTH - 94, 34, int(34 * batt / 100), 5),)
+
+    connected = state.get("connected", False)
+    connection_text = "● LINKED" if connected else "● OFFLINE"
+    connection_color = GREEN if connected else RED
+
+    screen.blit(
+        font_tiny.render(connection_text, True, connection_color),
+        (WIDTH - 95, 48),)
 
     if state["elix_active"]:
         blink = int(t * 2) % 2 == 0
@@ -150,29 +167,32 @@ def draw_hud(screen, clock, t, state):
     screen.blit(font_small.render("[ VISUAL SCAN ]", True, CYAN_DIM), (panel_x, 85))
     pygame.draw.line(screen, CYAN_DIM, (panel_x, 102), (WIDTH - 20, 102), 1)
 
-    if state["detections"]:
-        for i, obj in enumerate(state["detections"][:4]):
+    detections = state.get("detections", [])
+
+    if detections:
+        for i, obj in enumerate(detections[:4]):
+            if isinstance(obj, dict):
+                name = str(obj.get("name", "unknown"))
+            else:
+                name = str(obj)
+
+            y = 112 + i * 28
             bar_w = int(140 * (0.95 - i * 0.1))
-            pygame.draw.rect(screen, (0, 60, 30), (panel_x, 112 + i * 28, bar_w, 18))
-            pygame.draw.rect(screen, GREEN, (panel_x, 112 + i * 28, bar_w, 18), 1)
-            screen.blit(font_tiny.render(obj.upper(), True, GREEN), (panel_x + 5, 116 + i * 28))
+
+            pygame.draw.rect(
+                screen, (0, 60, 30), (panel_x, y, bar_w, 18))
+            pygame.draw.rect(
+                screen, GREEN, (panel_x, y, bar_w, 18), 1)
+            screen.blit(
+                font_tiny.render(name.upper(), True, GREEN),
+                (panel_x + 5, y + 4),)
     else:
-        screen.blit(font_tiny.render("NO TARGETS", True, GRAY), (panel_x, 115))
-        screen.blit(font_tiny.render("MOTION WATCH ON", True, GRAY), (panel_x, 132))
-
-    pygame.draw.line(screen, CYAN_DIM, (0, HEIGHT - 38), (WIDTH, HEIGHT - 38), 1)
-    if state["notification"]:
-        blink = int(time.time() * 2) % 2 == 0
-        notif_color = CYAN if blink else CYAN_DIM
-        pygame.draw.rect(screen, (0, 20, 30), (0, HEIGHT - 38, WIDTH, 38))
-        screen.blit(font_tiny.render(f">> {state['notification'][:55]}", True, notif_color), (15, HEIGHT - 25))
-    else:
-        screen.blit(font_tiny.render("XONFRAME v0.1  //  ELIX ONLINE", True, (50, 50, 70)), (15, HEIGHT - 25))
-
-    draw_corner_brackets(screen, 4, 4, WIDTH - 8, HEIGHT - 8, CYAN_DIM, size=18)
-    screen.blit(font_tiny.render(f"{int(clock.get_fps())}fps", True, GRAY), (WIDTH - 40, HEIGHT - 25))
-    pygame.display.flip()
-
+        screen.blit(
+            font_tiny.render("NO TARGETS", True, GRAY),
+            (panel_x, 115),)
+        screen.blit(
+            font_tiny.render("MOTION WATCH ON", True, GRAY),
+            (panel_x, 132),)
 
 if __name__ == "__main__":
     pygame.init()
@@ -183,21 +203,27 @@ if __name__ == "__main__":
     }
     start_time = time.time()
     running = True
-    print("E.L.I.X HUD test mode — 1=toggle elix 2=fake detections 3=fake notif Q=quit")
+    print("HUD test mode  1=turn on elix 2=sample detections 3=sample notifications Q=quit")
     while running:
         t = time.time() - start_time
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-            if event.type == pygame.KEYDOWN:
+
+            elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_1:
                     state["elix_active"] = not state["elix_active"]
-                if event.key == pygame.K_2:
-                    state["detections"] = ["person", "laptop", "bottle", "phone"]
-                if event.key == pygame.K_3:
-                    state["notification"] = "ALERT: Motion detected in frame"
-                if event.key == pygame.K_q:
+                elif event.key == pygame.K_2:
+                    state["detections"] = [
+                        "person", "laptop", "bottle", "phone"
+                    ]
+                elif event.key == pygame.K_3:
+                    state["notification"] = "ALERT: Motion detected"
+                elif event.key == pygame.K_q:
                     running = False
+
         draw_hud(screen, clock, t, state)
+        pygame.display.flip()
         clock.tick(30)
     pygame.quit()

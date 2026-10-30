@@ -7,7 +7,7 @@ They are open source and apparently they are smart too !
 
 ## Features
 
-Real time Navigation
+-Real time Navigation
 
 Live Camera feed
 
@@ -39,7 +39,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 ## PCB DESIGN
 
-                                                       THIS IS THE PCB DESIGN FOR THIS PROJECT
+                                              THIS IS THE PCB DESIGN FOR THIS PROJECT
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (1)" src="https://github.com/user-attachments/assets/1da3a379-82d9-4201-aadb-bf412fe403be" />
 
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (2)" src="https://github.com/user-attachments/assets/ee24cc2e-bd19-43ba-89c0-83bde3ca7238" />

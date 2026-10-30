@@ -9,13 +9,13 @@ They are open source and apparently they are smart too !
 
 - Real time Navigation
 
-Live Camera feed
+- Live Camera feed
 
-Object detection
+- Object detection
 
-Phone notifications
+- Phone notifications
 
-Reminders
+- Reminders
 
 And we can talk to ELIX
 

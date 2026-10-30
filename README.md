@@ -31,10 +31,10 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 ## 3D MODELS
 
-                               THIS IS THE CHARGING POD WERE THE TP4056 WILL BE THERE
+                                THIS IS THE CHARGING POD WERE THE TP4056 WILL BE THERE
 <img width="512" height="243" alt="image" src="https://github.com/user-attachments/assets/30914196-cab9-4d4d-bf74-906e18a54e45" />
 
-                                       THIS IS HOW THE GLASSES WILL LOOK LIKE  
+                                              THIS IS HOW THE GLASSES WILL LOOK LIKE  
 <img width="512" height="274" alt="image" src="https://github.com/user-attachments/assets/fbc5e221-8b3b-4151-9df2-da2a4cc5a5ec" />
 
 ## PCB DESIGN
@@ -50,9 +50,9 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 | SL  NO | COMPONENT | QTY | VALUE  | PRICE | BUYING LINKS |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1 | ESP32-S3FH4R2 | 1 | - | $ 3.47  | [ESP32](https://www.lcsc.com/product-detail/C3013940.html?s_z=n_q_C3013940&globalKeyword=C3013940.html) |
+| 1 | ESP32-S3FH4R2 | 1 | - | $ 3.47  | [ESP32](https://www.lcsc.com/product-detail/C3013940.html?s_z=n_q_C3013940&globalKeyword=C3013940) |
 | 2 | FPC CONNECTOR | 1 | - | $ 1.94  | [FPCCONNECTOR](https://www.lcsc.com/product-detail/C718080.html?s\_z=n\_q\_C718080\&globalKeyword=C718080) |
-| 3 | 2.2nH INDUCTOR | 1 | 2.2nH | $ 0.03  | \[INDUCTOR\]([https://www.lcsc.com/product-detail/C2044175.html?s\_z=n\_q\_C2044175\&globalKeyword=C2044175](https://www.lcsc.com/product-detail/C2044175.html?s_z=n_q_C2044175&globalKeyword=C2044175))  |
+| 3 | 2.2nH INDUCTOR | 1 | 2.2nH | $ 0.03  | [INDUCTOR]((https://www.lcsc.com/product-detail/C2044175.html?s_z=n_q_C2044175&globalKeyword=C2044175) |
 | 4 | UFL CONNECTOR | 1 | \- | $ 0.51  | \[UFLCONNECTOR\]([https://www.lcsc.com/product-detail/C88374.html?s\_z=n\_q\_C88374\&globalKeyword=C88374](https://www.lcsc.com/product-detail/C88374.html?s_z=n_q_C88374&globalKeyword=C88374))  |
 | 5 | 100uF | 1 | 100uF | $ 0.75  | \[100uFCAPACITOR\]([https://www.lcsc.com/product-detail/C6882730.html?s\_z=n\_q\_C6882730\&globalKeyword=C6882730](https://www.lcsc.com/product-detail/C6882730.html?s_z=n_q_C6882730&globalKeyword=C6882730))  |
 | 6 | 1pF CAPCITOR | 2 | 1pF | \~ $0.0069  ($0.69 / 100 pcs)  | \[1pFCAPACITOR\]([https://www.lcsc.com/product-detail/C277493.html?s\_z=n\_q\_C277493\&globalKeyword=C277493](https://www.lcsc.com/product-detail/C277493.html?s_z=n_q_C277493&globalKeyword=C277493))  |

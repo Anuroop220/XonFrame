@@ -31,7 +31,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 ## 3D MODELS
 
-                                            THIS IS THE CHARGING POD WERE THE TP4056 WILL BE THERE
+                                         THIS IS THE CHARGING POD WERE THE TP4056 WILL BE THERE
 <img width="512" height="243" alt="image" src="https://github.com/user-attachments/assets/30914196-cab9-4d4d-bf74-906e18a54e45" />
 
                                               THIS IS HOW THE GLASSES WILL LOOK LIKE  

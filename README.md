@@ -58,7 +58,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 | 6 | 1pF CAPCITOR | 2 | 1pF | ~ $0.0069  ($0.69 / 100 pcs)  | [1pFCAPACITOR](https://www.lcsc.com/product-detail/C277493.html?s_z=n_q_C277493&globalKeyword=C277493) |
 | 7 | 100nF CAPACITOR | 8 | 100nF | ~ $0.0055 ($0.55 / 100 pcs)  | [100nFCAPACITOR](https://www.lcsc.com/product-detail/C1525.html?globalKeyword=C1525&s_z=n_q_C1525)  |
 | 8 | 10uF CAPACITOR | 2 | 10uF | ~ $0.0258   ($2.58 / 100 pcs)  | [10uFCAPACITOR](https://www.lcsc.com/product-detail/C15525.html?s_z=n_q_C15525&globalKeyword=C15525) |
-| 9 | 5.1kΩ RESISTOR | 2 | 5.1kΩ | ~ $ 0.0026   ($0.26 / 100 pcs) | [5.1kΩRESISTOR]((https://www.lcsc.com/product-detail/C25905.html?s_z=n_q_C25905&globalKeyword=C25905)  |
+| 9 | 5.1kΩ RESISTOR | 2 | 5.1kΩ | ~ $ 0.0026   ($0.26 / 100 pcs) | [5.1kΩRESISTOR](https://www.lcsc.com/product-detail/C25905.html?s_z=n_q_C25905&globalKeyword=C25905)  |
 | 10 | 4.7kΩ RESISTOR | 2 | 4.7kΩ | ~ $ 0.0029    ($0.29 / 100 pcs) | [4.7kΩRESISTOR](https://www.lcsc.com/product-detail/C25900.html?s_z=n_q_C25900&globalKeyword=C25900) |
 | 11 | 10kΩ RESISTOR | 3 | 10kΩ | ~ $ 0.0031    ($0.31 / 100 pcs) | [10kΩRESISTOR](https://www.lcsc.com/product-detail/C25744.html?s_z=n_q_C25744&globalKeyword=C25744) |
 | 12 | AP2112K-3.3TRG1 3.3V LDO REGULATOR  | 1 | - | ~ $ 0.1777     ($0.89  / 5 pcs) | [3.3VLDO](https://www.lcsc.com/product-detail/C51118.html?s_z=n_q_C51118&globalKeyword=C51118)  |

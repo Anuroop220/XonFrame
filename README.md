@@ -7,7 +7,7 @@ They are open source and apparently they are smart too !
 
 ## Features
 
--Real time Navigation
+- Real time Navigation
 
 Live Camera feed
 

@@ -50,8 +50,8 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 | SL  NO | COMPONENT | QTY | VALUE  | PRICE | BUYING LINKS |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| 1 | ESP32-S3FH4R2 | 1 | \- | $ 3.47  | [ESP32](https://www.lcsc.com/product-detail/C3013940.html?s\_z=n\_q\_C3013940\&globalKeyword=C3013940) |
-| 2 | FPC CONNECTOR | 1 | \- | $ 1.94  | \[FPCCONNECTOR\]([https://www.lcsc.com/product-detail/C718080.html?s\_z=n\_q\_C718080\&globalKeyword=C718080](https://www.lcsc.com/product-detail/C718080.html?s_z=n_q_C718080&globalKeyword=C718080))  |
+| 1 | ESP32-S3FH4R2 | 1 | - | $ 3.47  | [ESP32](https://www.lcsc.com/product-detail/C3013940.html?s\_z=n\_q\_C3013940\&globalKeyword=C3013940) |
+| 2 | FPC CONNECTOR | 1 | - | $ 1.94  | [FPCCONNECTOR](https://www.lcsc.com/product-detail/C718080.html?s\_z=n\_q\_C718080\&globalKeyword=C718080) |
 | 3 | 2.2nH INDUCTOR | 1 | 2.2nH | $ 0.03  | \[INDUCTOR\]([https://www.lcsc.com/product-detail/C2044175.html?s\_z=n\_q\_C2044175\&globalKeyword=C2044175](https://www.lcsc.com/product-detail/C2044175.html?s_z=n_q_C2044175&globalKeyword=C2044175))  |
 | 4 | UFL CONNECTOR | 1 | \- | $ 0.51  | \[UFLCONNECTOR\]([https://www.lcsc.com/product-detail/C88374.html?s\_z=n\_q\_C88374\&globalKeyword=C88374](https://www.lcsc.com/product-detail/C88374.html?s_z=n_q_C88374&globalKeyword=C88374))  |
 | 5 | 100uF | 1 | 100uF | $ 0.75  | \[100uFCAPACITOR\]([https://www.lcsc.com/product-detail/C6882730.html?s\_z=n\_q\_C6882730\&globalKeyword=C6882730](https://www.lcsc.com/product-detail/C6882730.html?s_z=n_q_C6882730&globalKeyword=C6882730))  |

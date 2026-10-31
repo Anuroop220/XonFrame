@@ -322,8 +322,7 @@ http://<paste_laptop_ip_here>:5001
 
 if it is running in the same computer where the xosofware is running 
 
- use this ip                                     
-``` 
+ use this ip ``` 
 http://localhost:5001
 ```
 

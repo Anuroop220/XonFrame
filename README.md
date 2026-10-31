@@ -251,17 +251,6 @@ Now for installing the dependences
 
 Type  -   pip install requirements.txt
 
-Create a file named `.env` in the root directory of your project and add your Gemini API key using the following format:
-
-```env
-# .env
-GEMINI_API_KEY=your_actual_api_key_here
-```
-
-> [!WARNING]
-> Never commit your real `.env` file or API keys to GitHub. Make sure `.env` is added to your `.gitignore` file to keep your credentials secure.
-
-
 **API KEYS** 
 
 
@@ -283,7 +272,9 @@ The repo already has a file called
 
 .env.example
 
-First we should copy the contents in that file and then make a new txt file in the same software folder that we are currently in.And paste the content  of .env.example.
+First we should copy the contents in that file and then make a new txt file in the same software folder that we are currently in.And paste the content  of .env.example.  
+
+###OR
 
 > [!WARNING]
 > Do not commit your personal API keys or `.env` files to a public repository!

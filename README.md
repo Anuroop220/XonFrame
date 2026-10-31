@@ -215,7 +215,7 @@ PASTE THIS
 
 
 AFTER THAT -
-Search  ESP32  in the Boards Manager tab 
+Search  **ESP32**  in the Boards Manager tab 
 
 <img width="392" height="440" alt="image" src="https://github.com/user-attachments/assets/93c3ffd2-f593-4f45-ad3c-e78dabef1454" />
 
@@ -238,7 +238,7 @@ After that
 Select the COM port 
 Tools - Port
 
-#### 📚Arduino IDE Libraries
+### 📚Arduino IDE Libraries
 
 NEXT WE NEED TO INSTALL THE LIBRARIES  SO THESE ARE THE ONES WE SHOULD INSTALL AND WHILE INSTALLING IF ASKED ABOUT INSTALLING DEPENDENCIES IT SHOULD BE INSTALLED TOO  
 
@@ -274,9 +274,10 @@ Now for installing the dependences
 
 Type  -   pip install requirements.txt
 
+
 ### 🔑API KEYS 
 
-
+---
 API keys are needed for the maps,messages and elix
 
 So for that 
@@ -317,23 +318,19 @@ For example - GEMINI_API_KEY=  APIKEY12345
 
 start it in another terminal by typing python elix_bridge.py 
 
-[!NOTE]
-(it works like at first go to to the folder path then type python main.py
-
-in the first window and next create a second window and type
-
-python elix_bridge.py and both should be running along side the xosoftware in the browser)
-
-use this bridge URL in the xosoftware settings tab
-
-http://<paste_laptop_ip_here>:5001
+>[!NOTE]
+>(it works like at first go to to the folder path then type python main.py
+>in the first window and next create a second window and type
+>python elix_bridge.py and both should be running along side the xosoftware in the browser)
+>use this bridge URL in the xosoftware settings tab
+>http://<paste_laptop_ip_here>:5001
 
 if it is running in the same computer where the xosofware is running 
 
- use this ip 
-``` 
-http://localhost:5001
-```
+>use this ip 
+>``` 
+>http://localhost:5001
+>```
 
  it will be already there so no need to change
  

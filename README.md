@@ -86,7 +86,10 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 | 7 | TP4056 C TYPE Charging Module  | 1 | - | $ 0.68 | [TP4056](https://www.amazon.in/UNIVERSAL-HUB-TP4056-Overcharge-Protection/dp/B0FVLYQBKC?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A366YFPXO3CTI5&th=1) |
 | 8 | Exciter 8Ω 1W Bone conduction speaker  | 1 | - | ~ $7.43  | [SPEAKER](https://www.thingbits.in/products/bone-conductor-transducer-with-wires-8-ohm-1-watt?srsltid=AfmBOopAAxpBy44V6buE1m6lCgi68V1ijIYXX552VQ8EoFbC07jLNLEY) |
 
+
+
 # TUTORIAL ON BUILDING !
+
 Download XonFrame Repository
 Clone or download the repository.
 Folders/Files -
@@ -109,7 +112,7 @@ After getting this files
 
 Go to [JLCPCB](https://jlcpcb.com/)
 
-Click Order now 
+Click **"Order now"**
 
 <img width="512" height="274" alt="image" src="https://github.com/user-attachments/assets/fcc1a500-2c94-4a3c-99d4-8c0e0b1a3d12" />
 
@@ -274,7 +277,7 @@ The repo already has a file called
 
 First we should copy the contents in that file and then make a new txt file in the same software folder that we are currently in.And paste the content  of .env.example.  
 
-### OR
+
 
 > [!WARNING]
 > Do not commit your personal API keys or `.env` files to a public repository!

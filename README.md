@@ -24,7 +24,6 @@ The glasses mainly collect information and display results.
 
 The phone handles speech recognition, computer vision, reasoning, navigation, and other AI features.
 
--------------------------------------------------------------------------------
 
 ## HOW IT WORKS
 The camera in the glasses capture frames when told and send it to xosoftware via wifi and ELIX looks at it and the question and answers the question !
@@ -32,6 +31,8 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 
 ## SCHEMATICS
+
+-------------------------------------------------------------------------------
 <img width="2362" height="1672" alt="SCH_Schematic1_1-P1_2026-08-31" src="https://github.com/user-attachments/assets/b5c90973-1955-4134-8b41-e0af67420157" />
 
 

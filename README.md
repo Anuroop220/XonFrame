@@ -53,7 +53,6 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (1)" src="https://github.com/user-attachments/assets/1da3a379-82d9-4201-aadb-bf412fe403be" />
 
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (2)" src="https://github.com/user-attachments/assets/ee24cc2e-bd19-43ba-89c0-83bde3ca7238" />
-
 ------------------------------------------------------------------------
 
 ## BOM
@@ -95,8 +94,6 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 | 6 | OV5640 Camera Module 5MP 68° HFOV MIPI 24-pin FPC  | 1 | - | $ 9.42 | [OV5640CAMERA](https://www.amazon.in/dp/B0HCYQJ8L3?ref=cm_sw_r_cp_ud_dp_D0MHWPTRH4WZW4WZHY7F&ref_=cm_sw_r_cp_ud_dp_D0MHWPTRH4WZW4WZHY7F&social_share=cm_sw_r_cp_ud_dp_D0MHWPTRH4WZW4WZHY7F) |
 | 7 | TP4056 C TYPE Charging Module  | 1 | - | $ 0.68 | [TP4056](https://www.amazon.in/UNIVERSAL-HUB-TP4056-Overcharge-Protection/dp/B0FVLYQBKC?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A366YFPXO3CTI5&th=1) |
 | 8 | Exciter 8Ω 1W Bone conduction speaker  | 1 | - | ~ $7.43  | [SPEAKER](https://www.thingbits.in/products/bone-conductor-transducer-with-wires-8-ohm-1-watt?srsltid=AfmBOopAAxpBy44V6buE1m6lCgi68V1ijIYXX552VQ8EoFbC07jLNLEY) |
-
-
 
 # ------------------------------------------------------------------------------------------------------------------------------------------------------
 

@@ -225,7 +225,9 @@ and install
 
 <img width="238" height="202" alt="image" src="https://github.com/user-attachments/assets/3537b2c4-8ad4-484b-8cbd-1c1fb025e244" />
 
-*Arduino IDE Board Configuration*
+
+
+***Arduino IDE Board Configuration***
 
 > [!IMPORTANT]
 > ESP32-S3FH4R2 is a bare chip, not a devkit so we need to change the default configuration for that  first select the board
@@ -236,10 +238,11 @@ Then in Tools menu Scroll down  Then use these configurations -
 
 After that 
 Select the COM port 
-Tools - Port
+
+Tools - ("Port")
 
 ### 📚Arduino IDE Libraries
-
+---
 NEXT WE NEED TO INSTALL THE LIBRARIES  SO THESE ARE THE ONES WE SHOULD INSTALL AND WHILE INSTALLING IF ASKED ABOUT INSTALLING DEPENDENCIES IT SHOULD BE INSTALLED TOO  
 
 <img width="257" height="267" alt="image" src="https://github.com/user-attachments/assets/a5e727c4-f034-455d-932f-cae2949906c3" />
@@ -261,7 +264,7 @@ And after doing all this **click upload** and it will be flashed into the ESP32
 
 ### 🤖ELIX
 
-
+---
 For using ELIX we need python for that first install Python
 
 Go to the folder path in the terminal
@@ -313,7 +316,7 @@ For example - GEMINI_API_KEY=  APIKEY12345
 
 #### FOR TESTING ELIX (laptop) 
 
-
+---
  To test **ELIX** keep elix_bridge.py running while using the xosoftware and main.py
 
 start it in another terminal by typing python elix_bridge.py 

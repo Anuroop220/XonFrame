@@ -2,10 +2,10 @@
 # XonFrame
 XonFrame is an open-source smart glasses powered using ESP32-S3 and web app named XOSOFTWARE running E.L.I.X (The AI assistant for XonFrame)
 My goal is to build smart glasses that are affordable and completely open source
-
+----------------------------------------------------------------
 They are open source and apparently they are smart too !
 
-----------------------------------------------------------------
+
 ## Features
 
 - Real time Navigation

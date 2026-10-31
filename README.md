@@ -274,7 +274,7 @@ The repo already has a file called
 
 First we should copy the contents in that file and then make a new txt file in the same software folder that we are currently in.And paste the content  of .env.example.  
 
-###OR
+### OR
 
 > [!WARNING]
 > Do not commit your personal API keys or `.env` files to a public repository!

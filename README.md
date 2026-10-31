@@ -32,7 +32,6 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 ## SCHEMATICS
 
--------------------------------------------------------------------------------
 <img width="2362" height="1672" alt="SCH_Schematic1_1-P1_2026-08-31" src="https://github.com/user-attachments/assets/b5c90973-1955-4134-8b41-e0af67420157" />
 
 
@@ -46,7 +45,6 @@ The camera in the glasses capture frames when told and send it to xosoftware via
                                               THIS IS HOW THE GLASSES WILL LOOK LIKE  
 <img width="512" height="274" alt="image" src="https://github.com/user-attachments/assets/fbc5e221-8b3b-4151-9df2-da2a4cc5a5ec" />
 
-------------------------------------------------------------------------------------------------------------------------------------
 
 ## PCB DESIGN
 
@@ -54,7 +52,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (1)" src="https://github.com/user-attachments/assets/1da3a379-82d9-4201-aadb-bf412fe403be" />
 
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (2)" src="https://github.com/user-attachments/assets/ee24cc2e-bd19-43ba-89c0-83bde3ca7238" />
-------------------------------------------------------------------------
+
 
 ## BOM
 
@@ -100,7 +98,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 # TUTORIAL ON BUILDING !
 
-### *HARDWARE PART*🧑‍🔧
+### 🛠️*HARDWARE PART*
 
 Download XonFrame Repository
 Clone or download the repository.
@@ -198,7 +196,7 @@ Set the model Scale to 100%
 | nozzle | 0.4mm |
 | Support  | Only when needed |
 
-### *SOFTWARE PART*👨‍💻
+### 👨‍💻*SOFTWARE PART*
 
 #### Installing Arduino IDE 
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)

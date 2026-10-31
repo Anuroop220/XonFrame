@@ -94,7 +94,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 | 7 | TP4056 C TYPE Charging Module  | 1 | - | $ 0.68 | [TP4056](https://www.amazon.in/UNIVERSAL-HUB-TP4056-Overcharge-Protection/dp/B0FVLYQBKC?source=ps-sl-shoppingads-lpcontext&ref_=fplfs&smid=A366YFPXO3CTI5&th=1) |
 | 8 | Exciter 8Ω 1W Bone conduction speaker  | 1 | - | ~ $7.43  | [SPEAKER](https://www.thingbits.in/products/bone-conductor-transducer-with-wires-8-ohm-1-watt?srsltid=AfmBOopAAxpBy44V6buE1m6lCgi68V1ijIYXX552VQ8EoFbC07jLNLEY) |
 
-# ------------------------------------------------------------------------------------------------------------------------------------------------------
+ 
 
 # TUTORIAL ON BUILDING !
 
@@ -231,7 +231,7 @@ After that
 Select the COM port 
 Tools - Port
 
-#### Arduino IDE Libraries
+#### 📚Arduino IDE Libraries
 
 NEXT WE NEED TO INSTALL THE LIBRARIES  SO THESE ARE THE ONES WE SHOULD INSTALL AND WHILE INSTALLING IF ASKED ABOUT INSTALLING DEPENDENCIES IT SHOULD BE INSTALLED TOO  
 
@@ -252,7 +252,7 @@ Replace this part with your wifi name and password
 And after doing all this **click upload** and it will be flashed into the ESP32
 
 
-### ELIX
+### 🤖ELIX
 
 
 For using ELIX we need python for that first install Python
@@ -267,7 +267,7 @@ Now for installing the dependences
 
 Type  -   pip install requirements.txt
 
-### API KEYS 
+### 🔑API KEYS 
 
 
 API keys are needed for the maps,messages and elix

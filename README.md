@@ -227,7 +227,11 @@ and install
 
 
 
+
+
 ***Arduino IDE Board Configuration***
+
+--
 
 > [!IMPORTANT]
 > ESP32-S3FH4R2 is a bare chip, not a devkit so we need to change the default configuration for that  first select the board
@@ -239,7 +243,7 @@ Then in Tools menu Scroll down  Then use these configurations -
 After that 
 Select the COM port 
 
-Tools - ("Port")
+Tools - Port
 
 ### 📚Arduino IDE Libraries
 ---

@@ -326,9 +326,6 @@ if it is running in the same computer where the xosofware is running
 
  it will be already there so no need to change
  
----
-
-
 
 ## Contributing
 

@@ -202,7 +202,8 @@ Set the model Scale to 100%
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)
 Then install the ESP32 board package 
 File - Preferences - and in additional board manager urls 
-PASTE THIS > https://espressif.github.io/arduino-esp32/package_esp32_index.json
+PASTE THIS 
+> ``` https://espressif.github.io/arduino-esp32/package_esp32_index.json ```
 
 <img width="512" height="231" alt="image" src="https://github.com/user-attachments/assets/19b51bf7-56ca-44d4-9153-489220b85125" />
 

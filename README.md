@@ -226,7 +226,7 @@ and install
 <img width="238" height="202" alt="image" src="https://github.com/user-attachments/assets/3537b2c4-8ad4-484b-8cbd-1c1fb025e244" />
 
 
-<br>
+<br><br>
 
 ***Arduino IDE Board Configuration***
 

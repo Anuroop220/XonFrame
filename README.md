@@ -226,12 +226,11 @@ and install
 <img width="238" height="202" alt="image" src="https://github.com/user-attachments/assets/3537b2c4-8ad4-484b-8cbd-1c1fb025e244" />
 
 
-
-
+<br>
 
 ***Arduino IDE Board Configuration***
 
---
+---
 
 > [!IMPORTANT]
 > ESP32-S3FH4R2 is a bare chip, not a devkit so we need to change the default configuration for that  first select the board

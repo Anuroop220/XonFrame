@@ -303,13 +303,14 @@ For example - GEMINI_API_KEY=  APIKEY12345
 
 
 
-FOR TESTING ELIX (laptop) 
+#### FOR TESTING ELIX (laptop) 
 
 
- To test ELIX keep elix_bridge.py running while using the xosoftware and main.py
+ To test **ELIX** keep elix_bridge.py running while using the xosoftware and main.py
 
 start it in another terminal by typing python elix_bridge.py 
 
+[!NOTE]
 (it works like at first go to to the folder path then type python main.py
 
 in the first window and next create a second window and type
@@ -324,7 +325,7 @@ if it is running in the same computer where the xosofware is running
 
  use this ip 
 ``` 
-**http://localhost:5001**
+http://localhost:5001
 ```
 
  it will be already there so no need to change

@@ -246,7 +246,7 @@ Tools - Port
 
 ### 📚Arduino IDE Libraries
 ---
-NEXT WE NEED TO INSTALL THE LIBRARIES  SO THESE ARE THE ONES WE SHOULD INSTALL AND WHILE INSTALLING IF ASKED ABOUT INSTALLING DEPENDENCIES IT SHOULD BE INSTALLED TOO  
+THESE ARE THE 3 LIBRARIES TO BE INSTALLED  (*DEPENDENCIES OF THESE SHOULD BE INSTALLED TOO*)
 
 <img width="257" height="267" alt="image" src="https://github.com/user-attachments/assets/a5e727c4-f034-455d-932f-cae2949906c3" />
 <img width="250" height="237" alt="image" src="https://github.com/user-attachments/assets/bdc5ebc7-611e-4165-8bee-86d364282c89" />
@@ -262,31 +262,35 @@ Replace this part with your wifi name and password
 
 > #define WIFI_PASSWORD "YOUR_PASSWORD"
 
-And after doing all this **click upload** and it will be flashed into the ESP32
+And changing **click upload** and it will be flashed into the ESP32
 
 
 ### 🤖ELIX
 
 ---
-For using ELIX we need python for that first install Python
+For using ELIX we need python so
 
-Go to the folder path in the terminal
+First install [Python](https://www.python.org/downloads) (*latest version*)
+
+Now Go to the folder path in the terminal
 
 using  the command    
 
-cd pathtothefolder 
+cd <pastethepathtothefolder> 
 
 Now for installing the dependences 
 
-Type  -   pip install requirements.txt
-
+Type  -   
+```
+pip install requirements.txt
+```
 
 ### 🔑API KEYS 
 
 ---
 API keys are needed for the maps,messages and elix
 
-So for that 
+So
 
 FIRST GET THE API KEYS FROM THE FOLLOWING SERVICES
 
@@ -300,22 +304,24 @@ After getting the keys we need to put them in the .env file
 
 The repo already has a file called
 
-.env.example
+#### .env.example
 
-First we should copy the contents in that file and then make a new txt file in the same software folder that we are currently in.And paste the content  of .env.example.  
-
+First copy the contents in that file and then make a new txt file in the software folder that And paste the contents of .env.example.  
 
 
 > [!WARNING]
 > Do not commit your personal API keys or `.env` files to a public repository!
 
-NEXT fill the empty spaces were API is to be filled with API and save it 
+
+NEXT fill the empty spaces with API and save it 
+
+
+>[!TIP]
+>Eg - GEMINI_API_KEY=  APIKEY12345
+
  
-And after saving the rename the file to .env
-
-For example - GEMINI_API_KEY=  APIKEY12345
-
-
+>[!IMPORTANT]
+>And after saving the rename the file to .env
 
 #### FOR TESTING ELIX (laptop) 
 
@@ -332,8 +338,8 @@ use this bridge URL in the xosoftware settings tab
 http://<paste_laptop_ip_here>:5001
 
 if it is running in the same computer where the xosofware is running 
->[!TIP]
-> use this IP
+
+use this IP
 ``` 
 http://localhost:5001
 ```

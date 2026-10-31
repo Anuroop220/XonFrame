@@ -330,10 +330,20 @@ NEXT fill the empty spaces with API and save it
 
 start it in another terminal by typing python elix_bridge.py 
 
+First go to to the Repository/folder path and Type 
+```
+python main.py
+```
+in the first window 
+
+***Next*** create a Second terminal window (*Make sure it is in the correct folder path*) and Type
+```
+python elix_bridge.py
+```
+
 >[!NOTE]
->it works like at first go to to the folder path then type python main.py
-in the first window and next create a second window and type
-python elix_bridge.py and both should be running along side the xosoftware in the browser
+>Both should be running along side the xosoftware in the browser
+
 use this bridge URL in the xosoftware settings tab
 http://<paste_laptop_ip_here>:5001
 

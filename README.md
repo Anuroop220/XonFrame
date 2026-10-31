@@ -227,7 +227,7 @@ and install
 
 *Arduino IDE Board Configuration*
 
-> [!NOTE]
+> [!IMPORTANT]
 > ESP32-S3FH4R2 is a bare chip, not a devkit so we need to change the default configuration for that  first select the board
 Search  ESP32S3 dev module select ESP32S3 Dev Module (we should not select the Octal (WROOM2) one  we should select the normal one) 
 Then in Tools menu Scroll down  Then use these configurations -
@@ -323,12 +323,11 @@ start it in another terminal by typing python elix_bridge.py
 in the first window and next create a second window and type
 python elix_bridge.py and both should be running along side the xosoftware in the browser
 use this bridge URL in the xosoftware settings tab
-
 http://<paste_laptop_ip_here>:5001
 
 if it is running in the same computer where the xosofware is running 
-
->use this IP
+>[!TIP]
+> use this IP
 ``` 
 http://localhost:5001
 ```

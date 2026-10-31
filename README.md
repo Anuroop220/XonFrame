@@ -29,12 +29,12 @@ The phone handles speech recognition, computer vision, reasoning, navigation, an
 ## HOW IT WORKS
 The camera in the glasses capture frames when told and send it to xosoftware via wifi and ELIX looks at it and the question and answers the question !
 
-------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## SCHEMATICS
 <img width="2362" height="1672" alt="SCH_Schematic1_1-P1_2026-08-31" src="https://github.com/user-attachments/assets/b5c90973-1955-4134-8b41-e0af67420157" />
 
-----------------------------------------------------------------------------------------------------------------------
+
 ## 3D MODELS
 
                                          THIS IS THE CHARGING POD WERE THE TP4056 WILL BE THERE

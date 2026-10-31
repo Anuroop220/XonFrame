@@ -5,6 +5,7 @@ My goal is to build smart glasses that are affordable and completely open source
 
 They are open source and apparently they are smart too !
 
+----------------------------------------------------------------
 ## Features
 
 - Real time Navigation
@@ -23,19 +24,28 @@ The glasses mainly collect information and display results.
 
 The phone handles speech recognition, computer vision, reasoning, navigation, and other AI features.
 
+-------------------------------------------------------------------------------
+
 ## HOW IT WORKS
 The camera in the glasses capture frames when told and send it to xosoftware via wifi and ELIX looks at it and the question and answers the question !
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## SCHEMATICS
 <img width="2362" height="1672" alt="SCH_Schematic1_1-P1_2026-08-31" src="https://github.com/user-attachments/assets/b5c90973-1955-4134-8b41-e0af67420157" />
 
+----------------------------------------------------------------------------------------------------------------------
 ## 3D MODELS
 
                                          THIS IS THE CHARGING POD WERE THE TP4056 WILL BE THERE
 <img width="512" height="243" alt="image" src="https://github.com/user-attachments/assets/30914196-cab9-4d4d-bf74-906e18a54e45" />
 
+
+
                                               THIS IS HOW THE GLASSES WILL LOOK LIKE  
 <img width="512" height="274" alt="image" src="https://github.com/user-attachments/assets/fbc5e221-8b3b-4151-9df2-da2a4cc5a5ec" />
+
+------------------------------------------------------------------------------------------------------------------------------------
 
 ## PCB DESIGN
 
@@ -44,7 +54,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 <img width="2160" height="723" alt="PCB_PCB1_2026-08-31 (2)" src="https://github.com/user-attachments/assets/ee24cc2e-bd19-43ba-89c0-83bde3ca7238" />
 
-
+------------------------------------------------------------------------
 
 ## BOM
 
@@ -88,7 +98,11 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 # TUTORIAL ON BUILDING !
+
+### *HARDWARE PART*🧑‍🔧
 
 Download XonFrame Repository
 Clone or download the repository.
@@ -100,7 +114,7 @@ Folders/Files -
  Software/
  README.md
  
-**Order the PCB**
+#### Order the PCB
 
 Go to the PCB folder
 
@@ -121,7 +135,7 @@ Then upload the provided XonFrame_Gerbers.zip here
 <img width="512" height="146" alt="image" src="https://github.com/user-attachments/assets/5de2c32e-1b36-44db-ab4c-12c93bbe6a01" />
 
 
-**PCB Settings**
+#### PCB Settings
 
 For this pcb use this settings 
 
@@ -134,7 +148,7 @@ For this pcb use this settings
 <img width="512" height="327" alt="image" src="https://github.com/user-attachments/assets/f336620b-afed-479a-b457-2e868a71f4a4" />
 
 
-**PCB Assembly**
+#### PCB Assembly
 
 While Ordering the pcb just turn on the Pcb Assembly option
 
@@ -145,14 +159,14 @@ AFTER THAT -
 <img width="512" height="159" alt="image" src="https://github.com/user-attachments/assets/cf318b42-ddc6-423e-b288-1ffe8141734d" />
 
 
-CLICK NEXT 
+**CLICK NEXT** 
 THEN-  YOU WILL BE IN DIRECTED TO THIS PAGE 
 
 
 <img width="512" height="181" alt="image" src="https://github.com/user-attachments/assets/5802c3e3-2952-4e07-88d4-b3c881d86da3" />
 
 
-AND IN HERE CLICK THIS 
+AND IN HERE **CLICK THIS** 
 
 <img width="512" height="129" alt="image" src="https://github.com/user-attachments/assets/d717aa59-ce62-43bb-98d8-931657ec1278" />
 
@@ -164,9 +178,9 @@ NEXT YOU WILL GET TO THIS PAGE AND THEN MAKE SURE EVERY COMPONENT IS SELECTED OR
 
 <img width="512" height="124" alt="image" src="https://github.com/user-attachments/assets/3c9d4b89-a69f-469e-96ef-be97d4a4847d" />
  
-THEN IN THE FOLLOWING PAGE CLICK ADD TO CART AND AFTER THAT BUY IT
+THEN IN THE FOLLOWING PAGE CLICK **ADD TO CART AND AFTER THAT BUY IT**
 
- **3D Printing the Frame**
+ #### 3D Printing the Frame
 
 Go to 3D MODELS/
 
@@ -176,7 +190,7 @@ Then Upload the STL files.
 
 Set the model Scale to 100%
 
-**Settings to use**
+#### *Settings to use*
 
 | Material | PETG |
 | :---- | :---- |
@@ -186,11 +200,13 @@ Set the model Scale to 100%
 | nozzle | 0.4mm |
 | Support  | Only when needed |
 
-Installing Arduino IDE 
+### *SOFTWARE PART*👨‍💻
+
+#### Installing Arduino IDE 
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)
 Then install the ESP32 board package 
 File - Preferences - and in additional board manager urls 
-PASTE THIS https://espressif.github.io/arduino-esp32/package_esp32_index.json
+PASTE THIS > https://espressif.github.io/arduino-esp32/package_esp32_index.json
 
 <img width="512" height="231" alt="image" src="https://github.com/user-attachments/assets/19b51bf7-56ca-44d4-9153-489220b85125" />
 
@@ -202,13 +218,14 @@ Search  ESP32  in the Boards Manager tab
 
 
 and install 
-esp32 by espressif systems
+**esp32 by espressif systems**
 
 <img width="238" height="202" alt="image" src="https://github.com/user-attachments/assets/3537b2c4-8ad4-484b-8cbd-1c1fb025e244" />
 
-Arduino IDE Board Configuration
+*Arduino IDE Board Configuration*
 
-ESP32-S3FH4R2 is a bare chip, not a devkit so we need to change the default configuration for that  first select the board
+> [!NOTE]
+> ESP32-S3FH4R2 is a bare chip, not a devkit so we need to change the default configuration for that  first select the board
 Search  ESP32S3 dev module select ESP32S3 Dev Module (we should not select the Octal (WROOM2) one  we should select the normal one) 
 Then in Tools menu Scroll down  Then use these configurations -
 
@@ -218,7 +235,7 @@ After that
 Select the COM port 
 Tools - Port
 
-Arduino IDE Libraries
+#### Arduino IDE Libraries
 
 NEXT WE NEED TO INSTALL THE LIBRARIES  SO THESE ARE THE ONES WE SHOULD INSTALL AND WHILE INSTALLING IF ASKED ABOUT INSTALLING DEPENDENCIES IT SHOULD BE INSTALLED TOO  
 
@@ -232,14 +249,14 @@ Now for Configuring wifi
 
 Replace this part with your wifi name and password
 
-#define WIFI_SSID "YOUR_WIFI"
+> #define WIFI_SSID "YOUR_WIFI"
 
-#define WIFI_PASSWORD "YOUR_PASSWORD"
+> #define WIFI_PASSWORD "YOUR_PASSWORD"
 
-And after doing all this click upload and it will be flashed into the ESP32
+And after doing all this **click upload** and it will be flashed into the ESP32
 
 
-**ELIX**
+### ELIX
 
 
 For using ELIX we need python for that first install Python
@@ -254,7 +271,7 @@ Now for installing the dependences
 
 Type  -   pip install requirements.txt
 
-**API KEYS** 
+### API KEYS 
 
 
 API keys are needed for the maps,messages and elix

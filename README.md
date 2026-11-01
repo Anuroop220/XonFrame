@@ -103,12 +103,19 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 ## STEP 1
 Download XonFrame Repository
 Clone or download the repository.
+
 Folders/Files -
+
  3D MODELS/
+ 
  BOM/
+ 
  Firmware/
+ 
  Pcb/
+ 
  Software/
+ 
  README.md
 
 ## STEP 2 

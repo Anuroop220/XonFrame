@@ -98,8 +98,10 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 # TUTORIAL ON BUILDING !
 
-### 🛠️*HARDWARE PART*
-
+## SECTION 1
+  ### 🛠️*HARDWARE PART*
+  
+## STEP 1
 Download XonFrame Repository
 Clone or download the repository.
 Folders/Files -
@@ -109,7 +111,8 @@ Folders/Files -
  Pcb/
  Software/
  README.md
- 
+
+## STEP 2 
 #### Order the PCB
 
 Go to the PCB folder
@@ -131,7 +134,7 @@ Then upload the provided XonFrame_Gerbers.zip here
 <img width="512" height="146" alt="image" src="https://github.com/user-attachments/assets/5de2c32e-1b36-44db-ab4c-12c93bbe6a01" />
 
 
-#### PCB Settings
+##### PCB Settings
 
 For this pcb use this settings 
 
@@ -144,7 +147,7 @@ For this pcb use this settings
 <img width="512" height="327" alt="image" src="https://github.com/user-attachments/assets/f336620b-afed-479a-b457-2e868a71f4a4" />
 
 
-#### PCB Assembly
+##### PCB Assembly
 
 While Ordering the pcb just turn on the Pcb Assembly option
 
@@ -176,6 +179,8 @@ NEXT YOU WILL GET TO THIS PAGE AND THEN MAKE SURE EVERY COMPONENT IS SELECTED OR
  
 THEN IN THE FOLLOWING PAGE CLICK **ADD TO CART AND AFTER THAT BUY IT**
 
+
+## STEP 3
  #### 3D Printing the Frame
 
 Go to 3D MODELS/
@@ -197,8 +202,10 @@ Set the model Scale to 100%
 | Support  | Only when needed |
 
 
+## SECTION 2
+   ### 👨‍💻*SOFTWARE PART*
 
-### 👨‍💻*SOFTWARE PART*
+## STEP 1
 
 ---
 
@@ -244,6 +251,7 @@ Select the COM port
 
 Tools - Port
 
+## STEP 2
 ### 📚Arduino IDE Libraries
 ---
 THESE ARE THE 3 LIBRARIES TO BE INSTALLED  (*DEPENDENCIES OF THESE SHOULD BE INSTALLED TOO*)
@@ -264,7 +272,7 @@ Replace this part with your wifi name and password
 
 And changing **click upload** and it will be flashed into the ESP32
 
-
+## STEP 2 
 ### 🤖ELIX
 
 ---
@@ -285,6 +293,7 @@ Type  -
 pip install requirements.txt
 ```
 
+## STEP 3
 ### 🔑API KEYS 
 
 ---
@@ -304,7 +313,7 @@ After getting the keys we need to put them in the .env file
 
 The repo already has a file called
 
-#### .env.example
+##### .env.example
 
 First copy the contents in that file and then make a new txt file in the software folder that And paste the contents of .env.example.  
 
@@ -323,7 +332,8 @@ NEXT fill the empty spaces with API and save it
 >[!IMPORTANT]
 >And after saving the rename the file to .env
 
-#### FOR TESTING ELIX (laptop) 
+## STEP 4 (Last Step)
+### FOR TESTING ELIX (laptop) 
 
 ---
  To test **ELIX** keep elix_bridge.py running while using the xosoftware and main.py

@@ -79,10 +79,10 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 | 19 | 2.54mm PITCH 1X7 MALE PIN HEADER  (THIS IS USED AS IN PLACE OF THE AMPLIFIER’S 7 PINS) | 1 | - | ~ $ 0.0399    ($0.40 / 10 pcs)  | [1X7HEADERS](https://www.lcsc.com/product-detail/C5360900.html?s_z=n_q_C5360900&globalKeyword=C5360900) |
 | 20 | 2.54mm PITCH 1X4 MALE PIN HEADER  (THIS IS USED AS IN PLACE OF THE DISPLAY’S 4 PINS) | 1 | - | ~ $ 0.0211    ($0.42 / 20 pcs) | [1X4HEADERS](http://lcsc.com/product-detail/C5116483.html?s_z=n_q_C5116483&globalKeyword=C5116483) |
 
+--- 
 
-
-                     
-
+> [!NOTE]
+> COMPONENTS TO BE BOUGHT SEPARATELY ARE GIVEN BELOW *(BREAKOUT BOARDS,BATTERIES ETC)*                     
 
 |    |     | |  |    | |
 | :---: | ----- | :---: | :---: | :---: | ----- |

@@ -101,7 +101,8 @@ The camera in the glasses capture frames when told and send it to xosoftware via
  ###  SECTION 1 - 🛠️*HARDWARE PART*
   
 ## STEP 1
-Download XonFrame Repository
+
+**Download XonFrame Repository**
 Clone or download the repository.
 
 Folders/Files -
@@ -213,8 +214,6 @@ Set the model Scale to 100%
    
 
 ## STEP 1
-
----
 
 #### Installing Arduino IDE 
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)

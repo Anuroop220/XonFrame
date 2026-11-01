@@ -84,7 +84,8 @@ The camera in the glasses capture frames when told and send it to xosoftware via
                      
 
 
-| COMPONENTS TO BE BOUGHT SEPARATELY *(BREAKOUT BOARDS,BATTERIES ETC*    |     | |  |    | |
+> [!NOTE]
+> COMPONENTS TO BE BOUGHT SEPARATELY *(BREAKOUT BOARDS,BATTERIES ETC*    |     | |  |    | |
 | :---: | ----- | :---: | :---: | :---: | ----- |
 | **SL NO** | **COMPONENT** | **QTY** | **VALUE** | **PRICE** | **BUYING LINKS** |
 | 1 | INMP441 MEMS 12S MIC  | 1 | - | $ 3.13 | [INMP441MIC](https://www.amazon.in/DELLZO-INMP441-Digital-Microphone-Module/dp/B0GWM67TGW/ref=asc_df_B0GWM67TGW?mcid=700ca5ea755731658f8266bc54412566&tag=googleshopdes-21&linkCode=df0&hvadid=709963085501&hvpos=&hvnetw=g&hvrand=11666371826456957855&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9149013&hvtargid=pla-2479502317422&hvocijid=11666371826456957855-B0GWM67TGW-&hvexpln=0&gad_source=1&th=1)  |

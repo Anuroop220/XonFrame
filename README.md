@@ -219,7 +219,7 @@ Set the model Scale to 100%
  
 ### STEP 1
 
-
+---
 
 #### Installing Arduino IDE 
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)
@@ -256,6 +256,7 @@ and install
 Search  ESP32S3 dev module select ESP32S3 Dev Module (we should not select the Octal (WROOM2) one  we should select the normal one) 
 Then in Tools menu Scroll down  Then use these configurations -
 
+---
 <img width="478" height="512" alt="image" src="https://github.com/user-attachments/assets/1fe6c573-797f-4af0-9e17-e5582842f1db" />
 
 After that 
@@ -265,9 +266,10 @@ Tools - Port
 
 ### STEP 2
 
-
 #### 📚Arduino IDE Libraries
 ---
+
+
 
 THESE ARE THE 3 LIBRARIES TO BE INSTALLED  (*DEPENDENCIES OF THESE SHOULD BE INSTALLED TOO*)
 

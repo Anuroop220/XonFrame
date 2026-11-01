@@ -265,7 +265,7 @@ Select the COM port
 Tools - Port
 
 ### STEP 2
-
+---
 #### 📚Arduino IDE Libraries
 ---
 

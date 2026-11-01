@@ -289,7 +289,8 @@ Replace this part with your wifi name and password
 
 And changing **click upload** and it will be flashed into the ESP32
 
-### STEP 2 
+### STEP 3
+---
 #### 🤖ELIX
 
 ---
@@ -310,7 +311,8 @@ Type  -
 pip install requirements.txt
 ```
 
-### STEP 3
+### STEP 4
+---
 #### 🔑API KEYS 
 
 ---
@@ -349,7 +351,8 @@ NEXT fill the empty spaces with API and save it
 >[!IMPORTANT]
 >And after saving the rename the file to .env
 
-### STEP 4 (Last Step)
+### STEP 5 (Last Step)
+---
 #### FOR TESTING ELIX (laptop) 
 
 ---

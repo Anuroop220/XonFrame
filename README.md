@@ -219,6 +219,7 @@ Set the model Scale to 100%
  
 ### STEP 1
 
+
 #### Installing Arduino IDE 
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)
 Then install the ESP32 board package 
@@ -262,8 +263,11 @@ Select the COM port
 Tools - Port
 
 ### STEP 2
+
+
 #### 📚Arduino IDE Libraries
 ---
+
 THESE ARE THE 3 LIBRARIES TO BE INSTALLED  (*DEPENDENCIES OF THESE SHOULD BE INSTALLED TOO*)
 
 <img width="257" height="267" alt="image" src="https://github.com/user-attachments/assets/a5e727c4-f034-455d-932f-cae2949906c3" />

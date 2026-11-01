@@ -104,7 +104,6 @@ The camera in the glasses capture frames when told and send it to xosoftware via
   
 ### STEP 1
 ---
-
 **Download XonFrame Repository**
 Clone or download the repository.
 
@@ -123,6 +122,7 @@ Folders/Files -
  README.md
 
 ### STEP 2 
+---
 #### Order the PCB
 
 Go to the PCB folder
@@ -190,7 +190,9 @@ NEXT YOU WILL GET TO THIS PAGE AND THEN MAKE SURE EVERY COMPONENT IS SELECTED OR
 THEN IN THE FOLLOWING PAGE CLICK **ADD TO CART AND AFTER THAT BUY IT**
 
 
+
 ### STEP 3
+---
  #### 3D Printing the Frame
 
 Go to 3D MODELS/

@@ -98,8 +98,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 
 # TUTORIAL ON BUILDING !
 
-## SECTION 1
-  ### 🛠️*HARDWARE PART*
+ ###  SECTION 1 - 🛠️*HARDWARE PART*
   
 ## STEP 1
 Download XonFrame Repository
@@ -202,8 +201,9 @@ Set the model Scale to 100%
 | Support  | Only when needed |
 
 
-## SECTION 2
-   ### 👨‍💻*SOFTWARE PART*
+
+   ### SECTION 2 👨‍💻*SOFTWARE PART*
+   
 
 ## STEP 1
 

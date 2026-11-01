@@ -79,6 +79,8 @@ The camera in the glasses capture frames when told and send it to xosoftware via
 | 19 | 2.54mm PITCH 1X7 MALE PIN HEADER  (THIS IS USED AS IN PLACE OF THE AMPLIFIER’S 7 PINS) | 1 | - | ~ $ 0.0399    ($0.40 / 10 pcs)  | [1X7HEADERS](https://www.lcsc.com/product-detail/C5360900.html?s_z=n_q_C5360900&globalKeyword=C5360900) |
 | 20 | 2.54mm PITCH 1X4 MALE PIN HEADER  (THIS IS USED AS IN PLACE OF THE DISPLAY’S 4 PINS) | 1 | - | ~ $ 0.0211    ($0.42 / 20 pcs) | [1X4HEADERS](http://lcsc.com/product-detail/C5116483.html?s_z=n_q_C5116483&globalKeyword=C5116483) |
 
+
+
                      
 
 
@@ -101,6 +103,7 @@ The camera in the glasses capture frames when told and send it to xosoftware via
  ## SECTION 1 - 🛠️*HARDWARE PART*
   
 ### STEP 1
+---
 
 **Download XonFrame Repository**
 Clone or download the repository.
@@ -119,7 +122,7 @@ Folders/Files -
  
  README.md
 
-## STEP 2 
+### STEP 2 
 #### Order the PCB
 
 Go to the PCB folder
@@ -187,7 +190,7 @@ NEXT YOU WILL GET TO THIS PAGE AND THEN MAKE SURE EVERY COMPONENT IS SELECTED OR
 THEN IN THE FOLLOWING PAGE CLICK **ADD TO CART AND AFTER THAT BUY IT**
 
 
-## STEP 3
+### STEP 3
  #### 3D Printing the Frame
 
 Go to 3D MODELS/
@@ -210,10 +213,9 @@ Set the model Scale to 100%
 
 
 
-   ### SECTION 2 👨‍💻*SOFTWARE PART*
-   
-
-## STEP 1
+   ## SECTION 2 👨‍💻*SOFTWARE PART*
+ 
+### STEP 1
 
 #### Installing Arduino IDE 
 Install Arduino IDE  from [INSTALL ARDUINO IDE](https://www.arduino.cc/en/software/?_gl=1*8okl3v*_up*MQ..*_ga*OTAwMTg5ODk1LjE3ODcwNDMwNzk.*_ga_NEXN8H46L5*czE3ODcwNDMwNzkkbzEkZzAkdDE3ODcwNDMwNzkkajYwJGwwJGgyNTEzNDEwNTY.)
@@ -257,8 +259,8 @@ Select the COM port
 
 Tools - Port
 
-## STEP 2
-### 📚Arduino IDE Libraries
+### STEP 2
+#### 📚Arduino IDE Libraries
 ---
 THESE ARE THE 3 LIBRARIES TO BE INSTALLED  (*DEPENDENCIES OF THESE SHOULD BE INSTALLED TOO*)
 
@@ -278,8 +280,8 @@ Replace this part with your wifi name and password
 
 And changing **click upload** and it will be flashed into the ESP32
 
-## STEP 2 
-### 🤖ELIX
+### STEP 2 
+#### 🤖ELIX
 
 ---
 For using ELIX we need python so
@@ -299,8 +301,8 @@ Type  -
 pip install requirements.txt
 ```
 
-## STEP 3
-### 🔑API KEYS 
+### STEP 3
+#### 🔑API KEYS 
 
 ---
 API keys are needed for the maps,messages and elix
@@ -338,8 +340,8 @@ NEXT fill the empty spaces with API and save it
 >[!IMPORTANT]
 >And after saving the rename the file to .env
 
-## STEP 4 (Last Step)
-### FOR TESTING ELIX (laptop) 
+### STEP 4 (Last Step)
+#### FOR TESTING ELIX (laptop) 
 
 ---
  To test **ELIX** keep elix_bridge.py running while using the xosoftware and main.py
